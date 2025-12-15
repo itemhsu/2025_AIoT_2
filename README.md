@@ -89,6 +89,7 @@ git checkout 98cd765953dfe0e7bb1c5df8367e1b54bd966cce
 
 ```bash
 cp 0004-fix-spi-default-clock-source.patch ~/SageMaker/esp/esp-idf/
+cp 0004-fix-sdmmc-aligned-write-buffer.patch ~/SageMaker/esp/esp-idf/
 ```
 
 ---
@@ -99,6 +100,7 @@ cp 0004-fix-spi-default-clock-source.patch ~/SageMaker/esp/esp-idf/
 
 ```bash
 git apply 0004-fix-spi-default-clock-source.patch
+git apply 0004-fix-sdmmc-aligned-write-buffer.patch
 ```
 
 若套用成功，系統將修正 SPI 預設時鐘來源在高像素時鐘條件下可能引發的時序問題，提升整體系統穩定性。
