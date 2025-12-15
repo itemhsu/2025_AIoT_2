@@ -104,3 +104,17 @@ git apply 0004-fix-sdmmc-aligned-write-buffer.patch
 ```
 
 若套用成功，系統將修正 SPI 預設時鐘來源在高像素時鐘條件下可能引發的時序問題，提升整體系統穩定性。
+
+### Build
+```
+idf.py buuild
+```
+會產生很長的log
+
+###
+下載燒錄. MacOS 範例,   --no-stub 可以避免卡住,  -p /dev/cu.usbmodem1101 根據你的環境調整
+```bash
+python3 -m esptool -p /dev/cu.usbmodem1101 --chip esp32p4 -b 115200  --no-stub --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 16MB --flash_freq 40m 0x2000 bootloader.bin 0x8000 partition-table.bin 0x10000 factory_demo.bin
+```
+
+
