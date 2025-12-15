@@ -117,4 +117,13 @@ idf.py buuild
 python3 -m esptool -p /dev/cu.usbmodem1101 --chip esp32p4 -b 115200  --no-stub --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 16MB --flash_freq 40m 0x2000 bootloader.bin 0x8000 partition-table.bin 0x10000 factory_demo.bin
 ```
 
+### 快速復原
+下載編好的
+```
+https://dl.espressif.com/AE/esp-dev-kits/p4_eye_factory_demo_100.bin
+```
+
+```
+python3 -m esptool -p /dev/cu.usbmodem1101   --chip esp32p4   -b 115200 --no-stub  write_flash   0x0 p4_eye_factory_demo_100.bin
+```
 
